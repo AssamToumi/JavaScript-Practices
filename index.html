@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <title>Javascript Full Tutorial</title>
+ <script type="text/javascript">
+ document.write("<h1 style='color:orange;'>hello world</h1>");
+ var myVariable="hello world";
+ document.write("The value of variable is: " +myVariable);
+ var myName = "Asssem Toumi";
+ if (myName == "Asssem Toumi")
+ {
+     document.write("<br>That's what I say!<br>");
+ }
+ else 
+ {
+     document.write("<br>Sorry mr : "+ myName);
+ }
+ var a = 0;
+ var b = 0;
+ var result =a+b;
+ document.write(" l&apos;indexation commence-t-elle par : "+ result + "<br>");
+ for (i=0; i<10; i++)
+ {
+     document.write("line number : "+ i + "<br>");
+ }
+ 
+ var arr = new Array(4);
+ arr[0]=0;
+ arr[1]=" Assem ";
+ arr[2]=true;
+ arr[3]=" Toumi";
+ var length = arr.length;
+ document.write("<br>The length of the array is: "+length);
+ document.write("<br>The vlue of the first item is: "+arr[0]+ "<br>");
+ 
+ var Counter=0;
+ while (Counter <arr.length)
+ {
+ document.write(arr[Counter]); 
+ Counter++; 
+ }
+ function showMessage()
+ {
+ var yourName = document.getElementById("txtName").value;
+ 
+ alert("welcome Mr. : " +yourName);
+ }
+ function ChangeColor()
+ {
+ var SelectedColor = document.getElementById("ComboColors").value;
+ var box = document.getElementById("box");
+ box.style.backgroundColor = SelectedColor;
+ }
+ 
+ function CheckAge()
+ {
+ if (event.keyCode < 48 || event.keyCode > 57)
+ {
+ event.returnValue = false;
+ }
+ }
+ </script>
+ </head>
+ <body>
+ <br><br>
+ <div id="box" style="width:100px; height:100px; background-color:brown;">
+ </div>
+ <select id="ComboColors" onchange="ChangeColor()">
+ <option value="red">red</option>
+ <option value="blue">blue</option>
+ <option value="yellow">yellow</option>
+ <option value="green">green</option>
+ <option value="pink">pink</option>
+ <option value="aqua">aqua</option>
+ </select>
+ Enter your name here: <input type="text" id="txtName"/>
+ <input type="button" value="click to show" onclick="showMessage()"/>
+ <br>
+ Enter your age here: <input type="text" id="txtAge" onkeypress="CheckAge()" />
+ <input type="button" value="validate" />
+ </body>
+ </html>
